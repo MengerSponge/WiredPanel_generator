@@ -1,0 +1,52 @@
+\documentclass[11pt, oneside]{article}
+\usepackage[paperheight=180cm, paperwidth=130cm, margin = 0.5cm, top = .5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{siunitx,amssymb}
+\usepackage{calc}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta}
+
+% Laser cutter recognizes red hairlines as cutting coordinates. If a line is repeated, the cutting operation will be repeated as well. Blue is used for rastered etching, which can be useful for etching text labels.
+
+\definecolor{wireRed}{HTML}{FF0000}
+\definecolor{boundaryBlue}{HTML}{0000FF}
+
+\newcommand{\arrowIn}{\tikz \draw[-stealth] (-1pt,0) -- (1pt,0);}
+\newcommand{\ArrowIn}{\tikz \draw[-{Stealth[length=5mm, width=2mm]}] (-1pt,0) -- (1pt,0);}
+
+% % The most complicated cutting patterns are not terribly large, and it is occasionally useful to inspect the pdf itself to make sure the lines were defined how you intended.
+% \pdfcompresslevel=0
+% \pdfobjcompresslevel=0
+
+\begin{document}
+
+\pagenumbering{gobble}
+
+\begin{tikzpicture}
+\input{boundary-0}
+\input{closed-loops-0}
+\end{tikzpicture}
+
+\newpage
+\pagenumbering{gobble}
+\begin{tikzpicture}
+\input{boundary-1}
+\input{closed-loops-1}
+\end{tikzpicture}
+
+\newpage
+\pagenumbering{gobble}
+\begin{tikzpicture}
+\input{boundary-2}
+\input{closed-loops-2}
+\end{tikzpicture}
+
+\newpage
+\pagenumbering{gobble}
+\begin{tikzpicture}
+\input{boundary-3}
+\input{closed-loops-3}
+\end{tikzpicture}
+
+\end{document}
